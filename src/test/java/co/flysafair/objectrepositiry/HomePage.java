@@ -11,12 +11,10 @@ public class HomePage {
 	public HomePage() {
 		PageFactory.initElements(FunctionalLibrary.driver, this);
 	}
-
-	@FindBy(xpath = "(//a[text()='Flight Status'])[1]")
-	private WebElement lnk_flightStatus;
-
-	public WebElement getLnk_flightStatus() {
-		return lnk_flightStatus;
+	@FindBy(xpath="//span[text()='BOOK A FLIGHT']")
+	private WebElement bookinflight;
+	public WebElement getBookinflight() {
+		return bookinflight;
 	}
 
 }

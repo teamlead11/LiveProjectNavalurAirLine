@@ -11,26 +11,56 @@ public class FlightStatusPage {
 	public FlightStatusPage() {
 		PageFactory.initElements(FunctionalLibrary.driver, this);
 	}
-
-	@FindBy(xpath = "//input[@placeholder='Flight Number']")
-	private WebElement txt_flightNumber;
-
-	@FindBy(xpath = "//button[text()='Search']")
-	private WebElement btn_search;
-
-	@FindBy(xpath = "//table[@class='table status-table status-table-desktop']")
-	private WebElement tbl_flightSearchResult;
-
-	public WebElement getTxt_flightNumber() {
-		return txt_flightNumber;
+	@FindBy(xpath="(//div[@id='book'])[1]//ul")
+	private WebElement flighttype;
+	@FindBy(xpath="(//div[@class='city-code'])[1]")
+	private WebElement Departclick;
+	@FindBy(xpath="//div[@id='destinations-list-outbound']//li//div")
+	private WebElement DepartinSelect;
+	@FindBy(xpath="//div[@id='destinations-list-inbound']//div")
+	private WebElement DepartoutSelect;
+	@FindBy(xpath="(//table[@class='ui-datepicker-calendar'])[1]")
+	private WebElement DateSelect;
+	@FindBy(xpath="//button[text()='Done']")
+	private WebElement DateDoneClick;
+	@FindBy(xpath="(//div[text()='Passengers'])[1]")
+	private WebElement PassengerCount;
+	@FindBy(xpath="(//i[@class='fa fa-minus'])[1]")
+	private WebElement MinusClick;
+	@FindBy(xpath="(//i[@class='fa fa-plus'])[1]")
+	private WebElement PlusClick;
+	@FindBy(xpath="(//button[@class='btn btn-viablue find-flight-btn'])[1]")
+	private WebElement FindFlight;
+	public WebElement getFlighttype() {
+		return flighttype;
+	}
+	public WebElement getDepartclick() {
+		return Departclick;
+	}
+	public WebElement getDepartinSelect() {
+		return DepartinSelect;
+	}
+	public WebElement getDepartoutSelect() {
+		return DepartoutSelect;
+	}
+	public WebElement getDateSelect() {
+		return DateSelect;
+	}
+	public WebElement getDateDoneClick() {
+		return DateDoneClick;
+	}
+	public WebElement getPassengerCount() {
+		return PassengerCount;
+	}
+	public WebElement getMinusClick() {
+		return MinusClick;
+	}
+	public WebElement getPlusClick() {
+		return PlusClick;
+	}
+	public WebElement getFindFlight() {
+		return FindFlight;
 	}
 
-	public WebElement getBtn_search() {
-		return btn_search;
-	}
-
-	public WebElement getTbl_flightSearchResult() {
-		return tbl_flightSearchResult;
-	}
 
 }
