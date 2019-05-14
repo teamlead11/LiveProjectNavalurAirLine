@@ -13,7 +13,7 @@ public class FlightStatusPage {
 	}
 	@FindBy(xpath="(//div[@id='book'])[1]//ul")
 	private WebElement flighttype;
-	@FindBy(xpath="(//div[@class='city-code'])[1]")
+	@FindBy(xpath="(//div[text()='Depart'])[1]")
 	private WebElement Departclick;
 	@FindBy(xpath="//div[@id='destinations-list-outbound']//li//div")
 	private WebElement DepartinSelect;
