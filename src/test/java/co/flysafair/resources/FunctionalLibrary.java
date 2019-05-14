@@ -50,7 +50,7 @@ public class FunctionalLibrary {
 		System.setProperty("webdriver.chrome.driver", "src\\test\\resources\\lib\\chromedriver.exe");
 		if (BrowserName.equals("Chrome")) {
 			driver = new ChromeDriver();
-			driver.get("https://www.flysafair.co.za/");
+			driver.get("https://www.flyviaair.com/");
 			driver.manage().window().maximize();
 		}
 
