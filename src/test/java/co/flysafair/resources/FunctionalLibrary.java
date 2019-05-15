@@ -640,7 +640,21 @@ public class FunctionalLibrary {
 		String exec_Date = now.toString(fmt);
 		return exec_Date;
 	}
+	public static void webtable(String date)
+	{
+		List<WebElement> tag = driver.findElements(By.tagName("tr"));
+       for (WebElement t1 : tag) {
+		List<WebElement> t2 = t1.findElements(By.tagName("td"));
+	for (WebElement cell : t2) {
+		String s1 = cell.getAttribute("value");
+	if (s1.equals(date)) {
+		System.out.println(s1);
+		cell.click();
+		}
+	}
 
+       }
+	}
 	/**
 	 * Modify drop down value if something is already selected
 	 * 
