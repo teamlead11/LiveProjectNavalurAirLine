@@ -24,7 +24,7 @@ public class HomePageSteps extends FunctionalLibrary {
 	}
 	@Given("The user is in Home page")
 	public void the_user_is_in_Home_page() {
-		click(home.getLnk_flight());
+	//	click(home.getLnk_flight());
 	}
 
 	@When("The user fill in all the details")
@@ -35,11 +35,13 @@ public class HomePageSteps extends FunctionalLibrary {
 		click(home.getLnk_adultButton());
 		selectByIndex(home.getLnk_children(), 3);
 		selectByIndex(home.getLnk_departureCityDrop(), 3);
-		webtable("26");
 		click(home.getLnk_departureDate());
 		//click(home. getLnk_departureDate());
 		//String a = getCurrentDateMMMDDYYYY();
 		//a(home.getLnk_departureDate(),"05272019");
+	
+		webtable("26");
+
 		
 		click(home.getLnk_searchButton());
 

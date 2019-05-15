@@ -11,12 +11,12 @@ public class HomePage {
 	public HomePage() {
 		PageFactory.initElements(FunctionalLibrary.driver, this);
 	}
-	@FindBy(xpath = "(//a[@aria-controls='flight']")
+/*	@FindBy(xpath = "(//a[@aria-controls='flight']")
 	private WebElement lnk_flight;
 
 	public WebElement getLnk_flight() {
 		return lnk_flight;
-	}
+	}*/
 	@FindBy(xpath = "(//a[text()='Flight Status'])[1]")
 	private WebElement lnk_flightStatus;
 
@@ -84,5 +84,11 @@ public class HomePage {
 
 	public WebElement getLnk_adultButton() {
 		return lnk_adultButton;
+	}
+	@FindBy(xpath = "//option[@value='26']")
+	private WebElement lnk_dateCalender;
+
+	public WebElement getLnk_dateCalender() {
+		return lnk_dateCalender;
 	}
 }

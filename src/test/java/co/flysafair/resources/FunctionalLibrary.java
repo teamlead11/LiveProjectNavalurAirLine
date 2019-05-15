@@ -642,9 +642,9 @@ public class FunctionalLibrary {
 	}
 	public static void webtable(String date)
 	{
-		List<WebElement> tag = driver.findElements(By.tagName("tr"));
+		List<WebElement> tag = driver.findElements(By.id("departureDateMonthYear"));
        for (WebElement t1 : tag) {
-		List<WebElement> t2 = t1.findElements(By.tagName("td"));
+		List<WebElement> t2 = t1.findElements(By.id("departureDateDay"));
 	for (WebElement cell : t2) {
 		String s1 = cell.getAttribute("value");
 	if (s1.equals(date)) {
