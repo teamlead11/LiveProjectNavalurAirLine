@@ -12,5 +12,5 @@ Feature: To test flight status
     Then the user click the find flight button to view list of flight
 
     Examples: 
-      | depart       | arrival         |
+      | depart       | arrival     |
       | Columbia, SC | Orlando, FL |

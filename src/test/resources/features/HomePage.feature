@@ -1,40 +1,43 @@
-
-   
 @tag
 Feature: to test flight functionality
-  
-   @tag2
-  Scenario Outline: To test flight with one way
+
+  @tag1
+  Scenario Outline: To test flight with one way with different type of passengers
     Given The user is in the home page
-    When the user clicks the one way
-    And the user fill in the flight details "<departure>","<arrival>","<Deptime>","<Adult>","<Child>","<Infant>"
-    Then the user clicks  the SearchNow button
+    When User selects the single trip
+    And the user fill in the flight details "<From>","<To>","<Departure>","<Adult>","<Minor>","<Senior>"
+    Then the user clicks  the SearchMyFlight otpion
 
     Examples: 
-      | departure                  | arrival        | Deptime | Adult | Child | Infant |
-      | Lanseria Int. Johannesburg | Port Elizabeth |      16 |     2 |     2 |      1 |
-      | Port Elizabeth             | East London    |      17 |     1 |     1 |      0 |
+      | From           | To              | Departure | Adult | Minor | Senior |
+      | Acapulco       | Queretaro       |        21 |     1 |     1 |      2 |
+      | Aguascalientes | Puerto Vallarta |        17 |     0 |     1 |      1 |
+      | Chihuahua      | Culiacan        |        23 |     1 |     1 |      0 |
+      | Durango        | Chihuahua       |        25 |     2 |     0 |      1 |
+      | Tijuana        | Hermosillo      |        30 |     0 |     0 |      1 |
 
-  @tag3
-  Scenario Outline: To test flight with Round Trip
+  @tag2
+  Scenario Outline: To test flight with one way with different type of passengers
     Given The user is in the home page
-    When the user clicks the Round Trip 
-    And the user fill in the flight details "<departure>","<arrival>","<Deptime>","<Return>","<Adult>","<Child>","<Infant>"
-    Then the user clicks  the SearchNow button
+    When User selects the Round trip
+    And the user fill in the flight details "<From>","<To>","<Departure>","<Return>","<Adult>","<Minor>","<Senior>"
+    Then the user clicks  the SearchMyFlight otpion
 
     Examples: 
-      | departure                  | arrival        | Deptime | Return | Adult | Child | Infant |
-      | Lanseria Int. Johannesburg | Port Elizabeth |      16 |     17 |     2 |     1 |      1 |
-      | Port Elizabeth             | East London    |      17 |     18 |     1 |     2 |      0 |
-  
-   @tag4
-  Scenario Outline: To verify invalid message
-    Given The user is in the home page
-    When the user fill in the flight details "<departure>","<arrival>","<Deptime>","<Return>","<Adult>","<Child>","<Infant>"
-    Then the user clicks  the SearchNow button
-    And the user should see the invalid message
-     Examples: 
-      | departure                  | arrival        | Deptime | Return | Adult | Child | Infant |
-      | Lanseria Int. Johannesburg | Port Elizabeth |      16 |     17 |     1 |     2 |      2 |
-      | Port Elizabeth             | East London    |      17 |     18 |     1 |     1 |      2 |
-    
+      | From           | To              | Departure | Return | Adult | Minor | Senior |
+      | Acapulco       | Queretaro       |        21 |     23 |     1 |     1 |      2 |
+      | Aguascalientes | Puerto Vallarta |        17 |     19 |     0 |     1 |      1 |
+      | Chihuahua      | Culiacan        |        23 |     26 |     1 |     1 |      0 |
+      | Durango        | Chihuahua       |        25 |     29 |     2 |     0 |      1 |
+      | Tijuana        | Hermosillo      |        30 |     02 |     0 |     0 |      1 |
+
+  @tag4
+  Scenario Outline: To test the invalid flight details for single trip
+    Given The user is in home page
+    When User enter the invalid flight details  "<From>","<To>","<Departure>","<Adult>","<Minor>","<Senior>"
+    Then validate the error messages
+
+    Examples: 
+      | From     | To        | Departure | Adult | Minor | Senior |
+      | ADSFSDDF | ADSDSDS   |        21 |     1 |     1 |      2 |
+      | Acapulco | Queretaro |        21 |     0 |     1 |      0 |
